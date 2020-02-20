@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1,initial-scale=1,user-scalable=no,viewport-fit=cover"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>MosQA CTF</title>
+    <link rel="stylesheet" href="/assets/app.css"/>
+</head>
+<body>
+<div class="app">
+    <h1>MosQA CTF</h1>
+    <form method="POST" action="/ajax/update_name/" class="updateNameForm">
+        <input type="hidden" name="_csrf_token" value="{{_csrf_token}}"/>
+        <input type="text" name="name"/>
+        <button type="submit">Представиться</button>
+    </form>
+<hr/>
+    <div>Привет, {{user_name}}. У тебя очков: {{flags_length}}</div>
+<hr/>
+    <form method="POST" action="/ajax/post_comment/" class="postCommentForm">
+        <input type="hidden" name="_csrf_token" value="{{_csrf_token}}"/>
+        <fieldset>
+            <legend>Ломай меня нежно, детка</legend>
+
+            <input type="text" id="comment_username" name="name">
+            <label for="comment_username">Имя</label><br/>
+
+            <textarea id="comment_text" name="comment"></textarea>
+            <label for="comment_text">Комментарий</label><br/>
+
+            <button type="submit" id="comment_submit">Отправить</button>
+        </fieldset>
+    </form>
+</div>
+<script type="text/javascript" src="/assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+    "ignore": [
+        ".git",
+        "*.test.js"
+    ],
+    "ext": "js,json,html"
+}
