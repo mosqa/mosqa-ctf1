@@ -1,4 +1,4 @@
-# MosQF CTF
+# MosQA CTF
 
 ## dev
 
