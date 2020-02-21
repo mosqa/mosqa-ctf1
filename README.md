@@ -5,6 +5,7 @@
 Сервер запускается на порту 8080
 
 ```bash
+$ npm install
 $ npm ci
 $ npm start
 ```
