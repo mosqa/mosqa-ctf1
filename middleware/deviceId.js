@@ -10,6 +10,7 @@ module.exports = (req, res, next) => {
     } else {
         deviceId = createDeviceId();
         res.cookie('device_id', deviceId, { maxAge: 10 * 365 * 24 * 60 * 60 * 1000, httpOnly: true });
+        res.cookies.device_id = deviceId;
     }
     req.deviceId = deviceId;
 
