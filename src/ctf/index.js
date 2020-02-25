@@ -5,14 +5,25 @@ const path = require('path');
 
 const CASES = [];
 const CASES_PATH = __dirname + '/cases';
+const FLAGS_PATH = __dirname + '/flags';
 
 fs.readdirSync(CASES_PATH).forEach((file) => {
     if (file.endsWith('.test.js')) {
         return;
     }
     CASES.push({
-        id: path.basename(file),
+        id: 'case_' + path.basename(file),
         fn: require(CASES_PATH + '/' + file),
+    })
+});
+
+fs.readdirSync(FLAGS_PATH).forEach((file) => {
+    if (file.endsWith('.test.js')) {
+        return;
+    }
+    CASES.push({
+        id: 'flag_' + path.basename(file),
+        fn: require(FLAGS_PATH + '/' + file),
     })
 });
 

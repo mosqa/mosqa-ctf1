@@ -1,0 +1,26 @@
+User-agent: *
+
+Disallow: /beta/
+Disallow: /messages/
+Disallow: /admin.html
+Disallow: /profile/
+Disallow: /settings/
+Allow: /education/*
+Allow: /development/*
+Allow: /engagement/*
+Disallow: *lang=*
+Disallow: *!*
+Disallow: *search
+Disallow: /history/*$
+Disallow: *sID*
+Disallow: *ajax*
+Disallow: /*?page
+Disallow:*retpath=*
+Allow /6575ac67dfb72bee600d6d58ac8705ac/
+Disallow:*showcaptcha*
+Disallow: /*?
+Disallow: *chown*
+Disallow: */application/*
+Disallow: */my/*
+Disallow: /print/*
+Disallow: /rating/*
