@@ -1,0 +1,14 @@
+.body {
+
+}
+
+.app::after {
+    content: 'c04f3f26c45a895c4e4125d4c45175c958671d1d07704387'
+}
+
+@supports (display: grid) {
+    .app::after {
+        content: '';
+        display: none;
+    }
+}
