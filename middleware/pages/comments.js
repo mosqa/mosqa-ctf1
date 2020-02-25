@@ -14,9 +14,11 @@ module.exports = (req, res) => {
 
     db.collection('comments')
         .find(
-            {},
             {
-                limit: 20,
+                comment: { $not: /^$/ },
+            },
+            {
+                limit: 10,
                 sort: [ [ 'ts', 'descending' ] ],
             })
         .toArray()

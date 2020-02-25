@@ -4,14 +4,14 @@ const iAmTeapot = require('../../src/iAmTeapot');
 const ctf = require('../../src/ctf');
 
 module.exports = (req, res,) => {
-    if (String(req.body.name).length > 200) {
+    if (String(req.body.name).length > 50) {
         res.statusCode = 302;
         res.setHeader('location', '/?err=INVALID_COMMENT_USERNAME#ctf');
         res.end();
         return;
     }
 
-    if (String(req.body.comment).length > 500) {
+    if (String(req.body.comment).length > 200) {
         res.statusCode = 302;
         res.setHeader('location', '/?err=INVALID_COMMENT_TEXT#ctf');
         res.end();
@@ -24,8 +24,8 @@ module.exports = (req, res,) => {
     const commentsCollection = db.collection('comments');
     commentsCollection.insertOne({
         device_id: req.deviceId,
-        name: req.body.name,
-        comment: req.body.comment,
+        name: req.body.name || '',
+        comment: req.body.comment || '',
         ts: Date.now(),
     })
         .then(() => {
