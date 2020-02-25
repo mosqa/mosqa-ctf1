@@ -24,6 +24,7 @@ app.get('/', require('./middleware/pages/index'));
 app.use('/admin/', require('./middleware/pages/admin'));
 app.get('/comments/', require('./middleware/pages/comments'));
 app.get('/rating/', require('./middleware/pages/rating'));
+app.get('/whoami/', require('./middleware/pages/whoami'));
 
 app.post(
     '/ajax/update_name/',
