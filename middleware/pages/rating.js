@@ -18,7 +18,10 @@ module.exports = (req, res) => {
             { flags_length: { $gt: 0 } },
             {
                 limit: 20,
-                sort: [ [ 'flags_length', 'descending' ] ],
+                sort: [
+                    [ 'flags_length', 'descending' ],
+                    [ 'flag_last_ts', 'ascending' ]
+                ],
             })
         .toArray()
         .then((users) => {
