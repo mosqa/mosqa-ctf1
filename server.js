@@ -38,5 +38,12 @@ app.post(
     require('./middleware/actions/insertComment'),
 );
 
+app.get(
+    '/ajax/post_comment/',
+    (req, res) => {
+        res.send('b3fb6d8b0d33e835dd6447319735e979f2dccdda589ae7a0')
+    },
+);
+
 // eslint-disable-next-line no-console
 app.listen(8080, '127.0.0.1', () => console.log('>>>> App listen at port 8080!'));
