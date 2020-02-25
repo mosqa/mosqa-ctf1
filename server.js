@@ -10,12 +10,14 @@ app.set('x-powered-by', false);
 
 app.use(express.static('public'));
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 app.use(require('cookie-parser')());
-
 app.use(require('./middleware/db'));
 app.use(require('./middleware/deviceId'));
+
+app.use(express.urlencoded({ extended: true, limit: '1mb' }));
+app.use(express.json({ limit: '1mb' }));
+app.use(require('./middleware/processBodyParserError'));
+
 app.use(require('./middleware/xsrf'));
 app.use(csrfProtection);
 
