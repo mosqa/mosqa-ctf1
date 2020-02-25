@@ -9,19 +9,31 @@
     <link rel="stylesheet" href="/assets/app.css"/>
 </head>
 <body>
-<div class="app">
-    <h1>Live rating</h1>
-    <table class="ratings" border="1">
-        <thead>
-            <tr>
-                <th>Имя</th>
-                <th>Очки</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{!rating}}
-        </tbody>
-    </table>
+<div class="header">
+    <img src="/assets/img/mosqa.png" width="174" height="49" alt="MosQA"/>
+    <img src="/assets/img/mailru.png" width="149" height="48" alt="mail.ru"/>
+</div>
+<div class="hello">
+    <div class="hello__content">
+        <div class="hello__shape-left"></div>
+        <div class="hello__shape-right"></div>
+        <div class="ratings-wrap">
+            <div class="ratings-wrap__inner">
+                <table class="ratings">
+                    <thead>
+                    <tr>
+                        <th>Имя</th>
+                        <th>Очки</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{!rating}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="hello__space"></div>
 </div>
 </body>
 </html>

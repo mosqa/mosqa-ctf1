@@ -27,7 +27,6 @@ module.exports = (req, res) => {
                 return `
                     <div class="comment">
                         <div class="comment-meta">
-                            <div class="comment-name">${ escapeHTML(comment.name) }</div>
                             <div class="comment-date">${ datefmt }</div>
                         </div>
                         <div class="comment-comment"><pre>${ escapeHTML(comment.comment) }</pre></div>

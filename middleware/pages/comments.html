@@ -4,16 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,maximum-scale=1,initial-scale=1,user-scalable=no,viewport-fit=cover"/>
     <meta name="format-detection" content="telephone=no"/>
-    <meta http-equiv="refresh" content="5"/>
+<!--    <meta http-equiv="refresh" content="5"/>-->
     <title>MosQA CTF Live comments</title>
     <link rel="stylesheet" href="/assets/app.css"/>
 </head>
 <body>
-<div class="app">
-    <h1>Live comments</h1>
-    <div class="comments">
-        {{!comments}}
+<div class="header">
+    <img src="/assets/img/mosqa.png" width="174" height="49" alt="MosQA"/>
+    <img src="/assets/img/mailru.png" width="149" height="48" alt="mail.ru"/>
+</div>
+<div class="hello">
+    <div class="hello__content">
+        <div class="hello__shape-left"></div>
+        <div class="hello__shape-right"></div>
+        <div class="comments">
+            <div class="comments__inner">
+                {{!comments}}
+            </div>
+        </div>
     </div>
+    <div class="hello__space"></div>
 </div>
 </body>
 </html>

@@ -266,22 +266,63 @@ body::after {
     margin-top: 27px;
 }
 
+.comments {
+    width: 700px;
+    height: calc(100vh - 170px);
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.comments__inner {
+    height: 100%;
+    overflow: auto;
+}
+
 .comment {
     margin: 10px 0;
     padding: 10px;
 
-    border: 1px solid #ccc;
+    border: 4px solid #000;
 }
 
 .comment-meta {
     display: flex;
-}
-
-.comment-name {
-    font-weight: bold;
+    width: 100%;
 }
 
 .comment-date {
-    margin-left: 20px;
-    color: #ccc;
+    font-weight: bold;
+    color: #000;
+}
+
+.ratings-wrap {
+    width: 700px;
+    height: calc(100vh - 170px);
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.ratings-wrap__inner {
+    height: 100%;
+    overflow: auto;
+}
+
+.ratings {
+    width: 100%;
+}
+
+.ratings th {
+    background: #000100;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFDD0D;
+    padding: 10px;
+}
+
+.ratings td {
+    border: 4px solid #000100;
+    padding: 10px;
+    font-size: 20px;
+    line-height: 24px;
 }
