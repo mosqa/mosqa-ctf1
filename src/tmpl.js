@@ -1,20 +1,16 @@
+const escapeHTML = require('./escapeHTML');
+
 module.exports = (text, data) => {
     return text.replace(/{{([^{]+)}}/g, function(fullMatch, dataID) {
-        if (typeof data[dataID] === "undefined") {
+        const escape = !dataID.startsWith('!');
+        const key = dataID.startsWith('!') ? dataID.slice(1) : dataID;
+
+        if (typeof data[key] === "undefined") {
             return escapeHTML(fullMatch);
+        } else if (escape) {
+            return escapeHTML(String(data[key]));
         } else {
-            return escapeHTML(String(data[dataID]));
+            return String(data[key]);
         }
     });
-};
-
-const QUOTE_RE = /"/g;
-const LT_RE = /</g;
-const GT_RE = />/g;
-
-function escapeHTML(string = '') {
-    return string
-        .replace(QUOTE_RE, '&quot;')
-        .replace(LT_RE, '&lt;')
-        .replace(GT_RE, '&gt;');
 };

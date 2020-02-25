@@ -12,3 +12,24 @@
         display: none;
     }
 }
+
+
+.comment {
+    margin: 10px 0;
+    padding: 10px;
+
+    border: 1px solid #ccc;
+}
+
+.comment-meta {
+    display: flex;
+}
+
+.comment-name {
+    font-weight: bold;
+}
+
+.comment-date {
+    margin-left: 20px;
+    color: #ccc;
+}

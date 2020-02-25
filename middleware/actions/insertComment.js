@@ -26,6 +26,7 @@ module.exports = (req, res,) => {
         device_id: req.deviceId,
         name: req.body.name,
         comment: req.body.comment,
+        ts: Date.now(),
     })
         .then(() => {
             const winCases = ctf(req);
@@ -38,8 +39,6 @@ module.exports = (req, res,) => {
                         nextFlags.push({ id: id, request_id: 'TODO', timestamp: Date.now() });
                     }
                 });
-                console.log('currentFlags', currentFlags);
-                console.log('winCases', winCases);
                 if (nextFlags.length > currentFlags.length) {
                     db.collection('users')
                         .updateOne(
