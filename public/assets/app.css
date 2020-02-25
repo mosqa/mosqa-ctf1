@@ -187,6 +187,13 @@ body::after {
     background-size: 503px 850px;
 }
 
+@media (max-width: 1000px) {
+    .ctf__shape-left,
+    .ctf__shape-right {
+        display: none;
+    }
+}
+
 .ctf__content {
     position: relative;
     flex-grow: 1;
