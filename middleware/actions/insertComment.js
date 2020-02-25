@@ -3,7 +3,9 @@
 const iAmTeapot = require('../../src/iAmTeapot');
 const ctf = require('../../src/ctf');
 
-module.exports = (req, res, next) => {
+module.exports = (req, res,) => {
+    res.cookie('x-token', 'f442c7783c3d1f7c3958a6198342918d10130237a9145847');
+
     const db = req.db;
     const commentsCollection = db.collection('comments');
     commentsCollection.insertOne({

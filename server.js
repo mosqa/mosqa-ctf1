@@ -20,6 +20,8 @@ app.use(csrfProtection);
 
 app.get('/', require('./middleware/pages/index'));
 
+app.use('/admin/', require('./middleware/pages/admin'));
+
 app.post(
     '/ajax/update_name/',
     csrfProtection.validate,

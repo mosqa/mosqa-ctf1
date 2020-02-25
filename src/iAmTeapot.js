@@ -1,3 +1,4 @@
 module.exports = (req, res, err) => {
-    res.status(502).send(`Fatal error: ${ err.toString() }\n${ err.stack }`);
+    console.error('ERROR', err.toString(), '\n', err.stack);
+    res.status(502).send(`Fatal error. Sorry.`);
 };
