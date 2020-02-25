@@ -9,13 +9,13 @@ beforeEach(() => {
     }
 });
 
-it('должен сказать true на тег', () => {
-    req.body.name = '<script>1</script>';
+it('должен сказать true на только тег', () => {
+    req.body.name = '<h1>';
     expect(hasTag(req)).toEqual(true);
 });
 
-it('должен сказать true на скрипт', () => {
-    req.body.name = '<script>alert("1")</script>';
+it('должен сказать true на тег с текстом', () => {
+    req.body.name = 'asas<h1>asasa';
     expect(hasTag(req)).toEqual(true);
 });
 
