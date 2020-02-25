@@ -24,6 +24,7 @@ module.exports = (req, res, next) => {
                     id: deviceId,
                     name: '',
                     flags: [],
+                    flags_length: 0,
                 };
 
                 return usersCollection.insertOne(data).then(() => data);

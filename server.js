@@ -16,12 +16,14 @@ app.use(require('cookie-parser')());
 
 app.use(require('./middleware/db'));
 app.use(require('./middleware/deviceId'));
+app.use(require('./middleware/xsrf'));
 app.use(csrfProtection);
 
 app.get('/', require('./middleware/pages/index'));
 
 app.use('/admin/', require('./middleware/pages/admin'));
 app.get('/comments/', require('./middleware/pages/comments'));
+app.get('/rating/', require('./middleware/pages/rating'));
 
 app.post(
     '/ajax/update_name/',

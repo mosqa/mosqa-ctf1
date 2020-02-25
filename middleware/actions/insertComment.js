@@ -43,7 +43,7 @@ module.exports = (req, res,) => {
                     db.collection('users')
                         .updateOne(
                             { id: req.deviceId },
-                            { $set: { flags: nextFlags } },
+                            { $set: { flags: nextFlags, flags_length: nextFlags.length } },
                         )
                         .then(() => {
                             res.statusCode = 302;
