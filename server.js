@@ -35,4 +35,4 @@ app.post(
 );
 
 // eslint-disable-next-line no-console
-app.listen(8080, () => console.log('>>>> App listen at port 8080!'));
+app.listen(8080, '127.0.0.1', () => console.log('>>>> App listen at port 8080!'));
