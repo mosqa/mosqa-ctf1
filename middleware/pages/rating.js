@@ -42,10 +42,6 @@ module.exports = (req, res) => {
 };
 
 function formatUser(user) {
-    if (user.name) {
-        return user.name;
-    }
-
     const id = String(user.id);
-    return `${ id.slice(0, 8) }...${ id.slice(-8) }`
+    return `${ user.name ? user.name : '<noname>' } (${ id.slice(0, 8) }...${ id.slice(-8) })`
 }
