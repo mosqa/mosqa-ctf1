@@ -6,14 +6,14 @@ const ctf = require('../../src/ctf');
 module.exports = (req, res,) => {
     if (String(req.body.name).length > 200) {
         res.statusCode = 302;
-        res.setHeader('location', '/?err=INVALID_COMMENT_USERNAME');
+        res.setHeader('location', '/?err=INVALID_COMMENT_USERNAME#ctf');
         res.end();
         return;
     }
 
     if (String(req.body.comment).length > 500) {
         res.statusCode = 302;
-        res.setHeader('location', '/?err=INVALID_COMMENT_TEXT');
+        res.setHeader('location', '/?err=INVALID_COMMENT_TEXT#ctf');
         res.end();
         return;
     }
@@ -47,7 +47,7 @@ module.exports = (req, res,) => {
                         )
                         .then(() => {
                             res.statusCode = 302;
-                            res.setHeader('location', '/');
+                            res.setHeader('location', '/#ctf');
                             res.end();
                         })
                         .catch((error) => {
@@ -55,12 +55,12 @@ module.exports = (req, res,) => {
                         });
                 } else {
                     res.statusCode = 302;
-                    res.setHeader('location', '/');
+                    res.setHeader('location', '/#ctf');
                     res.end();
                 }
             } else {
                 res.statusCode = 302;
-                res.setHeader('location', '/');
+                res.setHeader('location', '/#ctf');
                 res.end();
             }
         })

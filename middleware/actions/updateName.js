@@ -18,7 +18,7 @@ module.exports = (req, res, next) => {
     )
         .then(() => {
             res.statusCode = 302;
-            res.setHeader('location', '/');
+            res.setHeader('location', '/#ctf');
             res.end();
         })
         .catch((error) => {

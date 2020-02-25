@@ -9,31 +9,49 @@
     <link rel="preload" as="script" href="/assets/jquery_729ccf4c81bd7044caeaba38d62bf8ee790a18b53c333e30.js"/>
 </head>
 <body>
-<div class="app">
-    <h1>MosQA CTF</h1>
-    <form method="POST" action="/ajax/update_name/" class="updateNameForm">
-        <input type="hidden" name="_csrf_token" value="{{_csrf_token}}"/>
-        <input type="text" name="name"/>
-        <button type="submit">Представиться</button>
-    </form>
-<hr/>
-    <div>Привет, {{user_name}}. У тебя очков: {{flags_length}}</div>
-<hr/>
-    <form method="POST" action="/ajax/post_comment/" class="postCommentForm">
-        <input type="hidden" name="_csrf_token" value="{{_csrf_token}}"/>
-        <fieldset>
-            <legend>Ломай меня нежно, детка</legend>
+<div class="header">
+    <img src="/assets/img/mosqa.png" width="174" height="49" alt="MosQA"/>
+    <img src="/assets/img/mailru.png" width="149" height="48" alt="mail.ru"/>
+</div>
+<div class="hello">
+    <div class="hello__content">
+        <div class="hello__shape-left"></div>
+        <div class="hello__shape-right"></div>
+        <img class="img-wedocare" src="/assets/img/wedocare.png" width="205" height="261" alt="MosQA: we do care"/>
+        <h1 class="hello__h1">MosQA CTF</h1>
+        <p class="hello__rules-title">Правила викторины:</p>
+        <p class="hello__rules-text">
+            Написание викторин требует определенных усилий, креативности и вдумчивости. Но глубокое чувство удовлетворения от того, что ваша викторина добавлена на сайт и в нее играют сотни людей – это чувство невозможно описать словами. Игроки ставят хорошие оценки грамотной викторине, присылают вам отзывы и благодарности.<br/>Постарайтесь сделать так, чтобы созданная вами викторина была действительно хорошей. Мы рекомендуем вам перед написанием собственной викторины сыграть в максимально возможное количество игр, уже выложенных на сайте. Таким образом вы сможете представить, какие форматы вопросов и ответов приемлемы, какие нет, может быть увидите, что вопросы, которые вы придумали, уже есть на сайте.
+        </p>
+        <form method="POST" action="/ajax/update_name/" class="form-update-name">
+            <input type="hidden" name="_csrf_token" value="{{_csrf_token}}"/>
+            <input type="text" name="name" class="form-update-name__input" autocomplete="off" placeholder="Введите ваше имя"/>
+            <button type="submit" class="form-update-name__button">Представиться</button>
+        </form>
+    </div>
+    <div class="hello__space"></div>
+</div>
+<a name="ctf"/>
+<div class="ctf">
+    <div class="ctf__content">
+        <div class="ctf__shape-left"></div>
+        <div class="ctf__shape-right"></div>
+        <div class="ctf__title">Привет, {{user_name}}. У тебя очков: {{flags_length}}</div>
+        <form method="POST" action="/ajax/post_comment/" class="ctf-form">
+            <input type="hidden" name="_csrf_token" value="{{_csrf_token}}"/>
+            <p class="ctf-form__title">Ломай меня нежно, детка</p>
+            <div class="ctf-form__inner">
+                <label for="comment_username" class="ctf-form__username-label">Имя</label>
+                <input type="text" id="comment_username" name="name" class="ctf-form__username-field">
 
-            <input type="text" id="comment_username" name="name">
-            <label for="comment_username">Имя</label><br/>
+                <label for="comment_text" class="ctf-form__comment-label">Комментарий</label>
+                <textarea id="comment_text" name="comment" class="ctf-form__comment-field"></textarea>
+                <!-- 206e41d7d72bbb6f50c60069813c1b3d157 -->
 
-            <textarea id="comment_text" name="comment"></textarea>
-            <label for="comment_text">Комментарий</label><br/>
-            <!-- 206e41d7d72bbb6f50c60069813c1b3d157 -->
-
-            <button type="submit" id="comment_submit">Отправить</button>
-        </fieldset>
-    </form>
+                <button type="submit" id="comment_submit" class="ctf-form__submit">Отправить</button>
+            </div>
+        </form>
+    </div>
 </div>
 <script type="text/javascript" src="/assets/app.js"></script>
 </body>
