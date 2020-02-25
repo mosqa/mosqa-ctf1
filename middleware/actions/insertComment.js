@@ -4,6 +4,20 @@ const iAmTeapot = require('../../src/iAmTeapot');
 const ctf = require('../../src/ctf');
 
 module.exports = (req, res,) => {
+    if (String(req.body.name).length > 200) {
+        res.statusCode = 302;
+        res.setHeader('location', '/?err=INVALID_COMMENT_USERNAME');
+        res.end();
+        return;
+    }
+
+    if (String(req.body.comment).length > 500) {
+        res.statusCode = 302;
+        res.setHeader('location', '/?err=INVALID_COMMENT_TEXT');
+        res.end();
+        return;
+    }
+
     res.cookie('x-token', 'f442c7783c3d1f7c3958a6198342918d10130237a9145847');
 
     const db = req.db;
